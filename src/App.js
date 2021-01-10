@@ -1,15 +1,13 @@
 import './App.css';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero'
+import Main from './Main';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
+// Dark, lightText
 function App() {
+
   return (
     <Router>
-      <div className="App">
-        <Navbar />
-        <Hero />
-      </div>
+        <Main />
     </Router>
   );
 }

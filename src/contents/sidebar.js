@@ -5,9 +5,9 @@ function Sidebar({toggleClick, isClicked}) {
     return (
         <>
             <NavbarMenuSidebar onClick={toggleClick} isClicked={isClicked} >
-                <NavLink to="/about">About</NavLink>
-                <NavLink to="/projects">Projects</NavLink>
-                <NavLink to="/">Resume</NavLink>
+                <NavLink to="about" onClick={toggleClick}>About</NavLink>
+                <NavLink to="projects" onClick={toggleClick}>Projects</NavLink>
+                <NavLink to="/" onClick={toggleClick}>Resume</NavLink>
             </NavbarMenuSidebar>
         </>
     )

@@ -1,15 +1,24 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { Link as LinkS} from 'react-scroll';
 
 export const NavbarContainer = styled.div`
     position: sticky;
+    margin-top: -80px;
+    top: 0;
     height: 80px;
     width: 100%;
-    background: #0D0D0D;
+    background: ${({scrollNav}) => (scrollNav ? "#0D0D0D" : "transparent")};
+    /* opacity: 0.2; */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 999;
+    z-index: 10;
+
+    @media screen and (max-width: 768px){
+        transition: 0.8s all ease;
+    }
+    
 `;
 
 export const NavbarItems = styled.div``;
@@ -21,11 +30,27 @@ export const NavbarLogo = styled.div`
     padding-left: 65px;
     padding-right: 65px;
     max-width: 90%;
+
+    @media screen and (max-width: 768px){
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @media screen and (max-width: 468px){
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 `;
 
-export const LogoText = styled.h1`
-    color: #CAD5E2;
+export const LogoText = styled(LinkS)`
+    color: #fff;
     font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover{
+        cursor: pointer;
+    }
 `;
 
 export const NavbarMenu = styled.div`
@@ -37,7 +62,7 @@ export const NavbarMenu = styled.div`
     justify-content: space-around;
 
     
-    @media screen and (max-width: 790px){
+    @media screen and (max-width: 768px){
         display: none;
     }
 
@@ -51,7 +76,7 @@ export const NavbarMenuSidebar = styled.div`
     display: none;
 
     
-    @media screen and (max-width: 790px){
+    @media screen and (max-width: 768px){
         display: flex;
         position: absolute;
         top: 80px;
@@ -70,25 +95,34 @@ export const NavbarMenuSidebar = styled.div`
     }
 `;
 
-export const NavLink = styled(Link)`
-     color: #CAD5E2;
+export const NavLink = styled(LinkS)`
+     color: #fff;
      font-size: 1.5rem;
      text-decoration: none;
+     
 
      &:hover{
-         color: #00D84A;
+         color: gray;
      }
 `
 
 export const Hamburger = styled.div`
     display: none;
 
-    @media screen and (max-width: 790px){
+    @media screen and (max-width: 468px){
         display: flex;
         color: #fff;
         font-size: 1.5rem;
         position: absolute;
-        right: 45px;
+        right: 30px;
+    }
+
+    @media screen and (max-width: 768px){
+        display: flex;
+        color: #fff;
+        font-size: 1.5rem;
+        position: absolute;
+        right: 30px;
     }
 
     
@@ -97,3 +131,5 @@ export const Hamburger = styled.div`
         cursor: pointer;
     }
 `;
+
+// new Date().getFullYear()

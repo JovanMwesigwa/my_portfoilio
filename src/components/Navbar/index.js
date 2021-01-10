@@ -7,14 +7,28 @@ function Navbar() {
 
     const [ clickedNav, setClickedNav ] = React.useState(false);
 
+    const [ scrollNav, setScrollNav ] = React.useState(false);
+
+    const changeNav = () => {
+        if(window.scrollY >= 80){
+            setScrollNav(true);
+        }else{
+            setScrollNav(false);
+        }
+    }
+
+    React.useEffect(() => {
+        window.addEventListener("scroll", changeNav);
+    },[])
+
     const toggle = () => {
         setClickedNav(!clickedNav);
     }
     return (
-        <NavbarContainer>
+        <NavbarContainer scrollNav={scrollNav}>
             <NavbarLogo>
-                <LogoText>
-                    JOVAN
+                <LogoText to="hero">
+                    JMB
                 </LogoText>
                 <Hamburger onClick={toggle}>
 
@@ -25,9 +39,9 @@ function Navbar() {
                 </Hamburger>
             </NavbarLogo>
             <NavbarMenu>
-                <NavLink to="/about">About</NavLink>
-                <NavLink to="/projects">Projects</NavLink>
-                <NavLink to="/">Resume</NavLink>
+                <NavLink to="about">about</NavLink>
+                <NavLink to="projects">projects</NavLink>
+                <NavLink to="/">resume</NavLink>
             </NavbarMenu>
             <Sidebar toggleClick={toggle} isClicked={clickedNav}/>
         </NavbarContainer>
