@@ -1,6 +1,6 @@
 import React from 'react';
 import { FooterContainer, IconsContainer, Logo,TextItem,LowerTextItem, FooterMenu,FooterItems,  IconLink, SocialIcons } from './Footer.elements';
-import { FaFacebook, FaTwitter, FaPhone, FaGithub, FaCopyright, FaRegCopyright } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaPhone, FaGithub, FaRegCopyright } from 'react-icons/fa';
 
 function Footer() {
     return (

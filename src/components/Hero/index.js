@@ -1,7 +1,7 @@
 import React from 'react'
 import { HeroContainer, HeroBg, VideoBg, HeroIconsContainer,IconLink, HeroContent, HeroHeader,HeroSubHeader, HeroSubText } from './Hero.elements'
 import Video from '../../assets/video.mp4';
-import { FaPhone , FaTwitter, FaFacebook, FaGithub } from 'react-icons/fa'
+import { FaTwitter, FaFacebook, FaGithub } from 'react-icons/fa'
 import { SiGmail  } from 'react-icons/si'
 
 
